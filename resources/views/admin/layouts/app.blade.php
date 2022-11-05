@@ -1,64 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8" />
     <title>Dashboard | Upzet - Admin & Dashboard Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      content="Premium Multipurpose Admin & Dashboard Template"
-      name="description"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon"  href="{{ asset('images/favicon.ico') }}"/>
+    <link rel="shortcut icon" href="/images/favicon.ico">
 
     <!-- jvectormap -->
-    <link href="{{ asset('libs/jqvmap/jqvmap.min.css') }}" rel="stylesheet" />
+    <link href="/libs/jqvmap/jqvmap.min.css" rel="stylesheet" />
 
     <!-- Bootstrap Css -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css'"/>
-   <!-- Icons Css -->
-    <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
+    <link href="/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-  </head>
+</head>
 
-    <body data-sidebar="dark">      
-      <div id="layout-wrapper">
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
         @include('admin.layouts.navigation')
         @include('admin.layouts.sidebar')
         <!-- Page Content -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
         <div class="main-content">
-          <div class="page-content">
-            <div class="container-fluid">
-              <main>
-                {{ $slot }}
-              </main>
-            </div>
-          </div>
-        </div>
-        <div class="rightbar-overlay"></div>
-      </div>
-      
-    </body>
 
-    <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    {{ $slot }}
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Upzet.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/libs/metismenu/metisMenu.min.js"></script>
+    <script src="/libs/simplebar/simplebar.min.js"></script>
+    <script src="/libs/node-waves/waves.min.js"></script>
 
     <!-- apexcharts js -->
-    <script src="{{ asset('libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="/libs/apexcharts/apexcharts.min.js"></script>
 
     <!-- jquery.vectormap map -->
-    <script src="{{ asset('libs/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('libs/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="/libs/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/libs/jqvmap/maps/jquery.vmap.usa.js"></script>
 
-    <script src="{{ asset('js/pages/dashboard.init.js') }}"></script>
+    <script src="/js/pages/dashboard.init.js"></script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
