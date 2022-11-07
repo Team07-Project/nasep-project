@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Upzet - Admin & Dashboard Template</title>
+    <title>{{ auth()->user()->name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -30,7 +30,12 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
         @include('admin.layouts.navigation')
-        @include('admin.layouts.sidebar')
+
+        @if(auth()->user()->role == "admin")
+            @include('admin.layouts.sidebar-admin')
+        @else
+            @include('admin.layouts.sidebar')
+        @endif
         <!-- Page Content -->
         <!-- ============================================================== -->
         <!-- Start right Content here -->

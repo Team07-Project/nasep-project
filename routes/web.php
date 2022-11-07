@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PuskesmasController;
+use App\Http\Controllers\PuskesmasDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Super Admin
+Route::resource('/admin/puskesmas', PuskesmasController::class);
+// Admin
 Route::get('/admin', [AdminController::class,'index']);
+Route::get('/admin/detail',[PuskesmasDetailController::class,'index']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

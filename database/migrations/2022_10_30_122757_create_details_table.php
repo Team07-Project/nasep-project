@@ -16,15 +16,17 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->references('id')->on('users')->onDelete('cascade');
-            $table->longText('visi');
-            $table->longText('misi');
-            $table->longText('sejarah');
-            $table->string('denah');
-            $table->longText('maklumat');
-            $table->string('so_puskesmas');
-            $table->string('so_rawat');
-            $table->string('so_laboratorium');
-            $table->string('text');
+            $table->string('logo')->nullable();
+            $table->string('pkm')->nullable();
+            $table->longText('visi')->nullable();
+            $table->longText('misi')->nullable();
+            $table->longText('sejarah')->nullable();
+            $table->string('denah')->nullable();
+            $table->longText('maklumat')->nullable();
+            $table->string('so_puskesmas')->nullable();
+            $table->string('so_rawat')->nullable();
+            $table->string('so_laboratorium')->nullable();
+            $table->string('text')->nullable();
             $table->timestamps();
         });
     }
