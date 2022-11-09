@@ -70,7 +70,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label for="example-email-input" class="col-md-2 col-form-label">Nama
+                                                    <label for="example-email-input" class="col-md-2 col-form-label">Nama Puskesmas
                                                         <span class="text-danger">*</span>
                                                     </label >
                                                     <div class="col-md-10">
@@ -137,7 +137,12 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table id="datatable" class="table table-bordered table-striped dt-responsive nowrap"
+                                    style="
+                                        border-collapse: collapse;
+                                        border-spacing: 0;
+                                        width: 100%;
+                                    ">
                                 <tr>
                                     <th>No</th>
                                     <th>Logo</th>

@@ -7,7 +7,7 @@
             <ul class="metismenu list-unstyled" id="side-menu">
               <li class="menu-title">Dashboard</li>
               <li>
-                <a href="dashboard.html" class="waves-effect">
+                <a href="/admin/" class="waves-effect">
                   <i class="mdi mdi-home-variant-outline"></i>
                   <span>Dashboard</span>
                 </a>
