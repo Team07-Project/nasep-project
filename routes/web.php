@@ -24,6 +24,7 @@ Route::resource('/admin/puskesmas', PuskesmasController::class);
 // Admin
 Route::get('/admin', [AdminController::class,'index']);
 Route::get('/admin/detail',[PuskesmasDetailController::class,'index']);
+Route::put('/admin/detail/{detail:id}/update',[PuskesmasDetailController::class,'update']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

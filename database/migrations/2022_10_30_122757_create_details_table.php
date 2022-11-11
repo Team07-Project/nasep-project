@@ -18,11 +18,15 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->references('id')->on('users')->onDelete('cascade');
             $table->string('logo')->nullable();
             $table->string('pkm')->nullable();
+            $table->string('motto')->nullable();
             $table->longText('visi')->nullable();
             $table->longText('misi')->nullable();
             $table->longText('sejarah')->nullable();
+            $table->string('desksejarah')->nullable();
             $table->string('denah')->nullable();
+            $table->string('deskdenah')->nullable();
             $table->longText('maklumat')->nullable();
+            $table->string('deskmaklumat')->nullable();
             $table->string('so_puskesmas')->nullable();
             $table->string('so_rawat')->nullable();
             $table->string('so_laboratorium')->nullable();

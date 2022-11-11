@@ -26,80 +26,149 @@
                                         <!-- <p class="card-title-desc">Takes the basic nav from above and adds the <code class="highlighter-rouge">.nav-tabs</code> class to generate a tabbed interface.</p> -->
         
                                         <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#identitas" role="tab">
-                                                    <i class="dripicons-home me-1 align-middle"></i> <span class="d-none d-md-inline-block">identitas</span> 
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
-                                                    <i class="dripicons-user me-1 align-middle"></i> <span class="d-none d-md-inline-block">Profile</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#messages" role="tab">
-                                                    <i class="dripicons-mail me-1 align-middle"></i> <span class="d-none d-md-inline-block">Messages</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#settings" role="tab">
-                                                    <i class="dripicons-gear me-1 align-middle"></i> <span class="d-none d-md-inline-block">Settings</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-        
+                                        <form enctype="multipart/form-data" action="/admin/detail/{{ $puskesmas->id }}/update" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#identitas" role="tab">
+                                                        <i class="dripicons-home me-1 align-middle"></i> <span class="d-none d-md-inline-block">identitas</span> 
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#denah" role="tab">
+                                                        <i class="dripicons-user me-1 align-middle"></i> <span class="d-none d-md-inline-block">Denah</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#sejarah" role="tab">
+                                                        <i class="dripicons-mail me-1 align-middle"></i> <span class="d-none d-md-inline-block">Sejarah</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#maklumat" role="tab">
+                                                        <i class="dripicons-gear me-1 align-middle"></i> <span class="d-none d-md-inline-block">Maklumat</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         <!-- Tab panes -->
-                                        <div class="tab-content p-3">
-                                            <div class="tab-pane active" id="identitas" role="tabpanel">
-                                                <p class="mb-0">
-                                                    <div class="d-flex justify-content-center">
-                                                        <div class="f">
-                                                            <h5 class="mt-2"> Nama Puskesmas </h5>
+                                            <div class="tab-content p-3">
+                                                <div class="tab-pane active" id="identitas" role="tabpanel">
+                                                    <p class="mb-0">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="card shadow-lg">
+                                                                    <div class="card-body">
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <img src="{{ asset('images/garut.png') }}" height="100" alt="">
+                                                                        </div>
+                                                                        <div class="text-center mt-3">
+                                                                            <h5> Puskesmas {{ $puskesmas->user->name }} </h5>
+                                                                            <h6> @if($puskesmas->motto)  " {{ $puskesmas->motto }} " @else " <i> Belum membuat Motto </i> "  @endif </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    <div class="form-input mb-2">
+                                                                        <label for=""> VISI </label>
+                                                                        <textarea name="visi" class="form-control">{{ $puskesmas->visi  }}</textarea>
+                                                                    </div>
+                                                                    <div class="form-input mb-2">
+                                                                        <label for=""> MISI </label>
+                                                                        <textarea name="misi" class="form-control">{{ $puskesmas->misi }}</textarea>
+                                                                    </div>
+                                                                    <div class="form-input mb-2">
+                                                                        <label for=""> Motto </label>
+                                                                        <textarea name="motto" class="form-control">{{ $puskesmas->motto }}</textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                            <h5 class="mt-2"> Nama Puskesmas </h5>
-                                                        <div class="col-md-10" class="bg-info">
-                                                            <input type="text" name="" id="" class="form-control"> 
-                                                            <input type="text" name="" id="" class="form-control"> 
-                                                        
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="denah" role="tabpanel">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex justify-content-center">
+                                                                        <img src="{{ $puskesmas->pictdenah }}" height="200" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <div class="form-group">
+                                                                <div class="form-input mb-2">
+                                                                    <label for=""> Denah </label>
+                                                                    <input type="file" name="denah" id="" class="form-control">
+                                                                </div>
+                                                                <div class="form-input">
+                                                                    <label for=""> Deskripsi </label>
+                                                                    <textarea name="deskripsi_denah" class="form-control">{{ $puskesmas->deskdenah }}</textarea>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </p>
+                                                </div>
+                                                <div class="tab-pane" id="sejarah" role="tabpanel">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex justify-content-center">
+                                                                        <img src="{{ $puskesmas->pictsejarah }}" height="200" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7">                                                            
+                                                            <div class="form-group">
+                                                                <div class="form-input mb-2">
+                                                                    <label for=""> Sejarah </label>
+                                                                    <input type="file" name="sejarah" id="" class="form-control">
+                                                                </div>
+                                                                <div class="form-input">
+                                                                    <label for=""> Deskripsi </label>
+                                                                    <textarea name="deskripsi_sejarah" class="form-control">{{ $puskesmas->desksejarah }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="maklumat" role="tabpanel">
+                                                <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex justify-content-center">
+                                                                        <img src="{{ $puskesmas->pictmaklumat }}" height="200" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7">                                                            
+                                                            <div class="form-group">
+                                                                <div class="form-input mb-2">
+                                                                    <label for=""> Maklumat </label>
+                                                                    <input type="file" name="maklumat" id="" class="form-control">
+                                                                </div>
+                                                                <div class="form-input">
+                                                                    <label for=""> Deskripsi </label>
+                                                                    <textarea name="deskripsi_maklumat" class="form-control">{{ $puskesmas->deskmaklumat }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="tab-pane" id="profile" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
-                                                    single-origin coffee squid. Exercitation +1 labore velit, blog
-                                                    sartorial PBR leggings next level wes anderson artisan four loko
-                                                    farm-to-table craft beer twee. Qui photo booth letterpress,
-                                                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-                                                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
-                                                    aesthetic magna delectus mollit.
-                                                </p>
+                                            <div class="d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-success"> Simpan Perubahan </button>
                                             </div>
-                                            <div class="tab-pane" id="messages" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Etsy mixtape wayfarers, ethical wes anderson tofu before they
-                                                    sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                                    farm-to-table readymade. Messenger bag gentrify pitchfork
-                                                    tattooed craft beer, iphone skateboard locavore carles etsy
-                                                    salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
-                                                    Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
-                                                    mi whatever gluten-free.
-                                                </p>
-                                            </div>
-                                            <div class="tab-pane" id="settings" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
-                                                    art party before they sold out master cleanse gluten-free squid
-                                                    scenester freegan cosby sweater. Fanny pack portland seitan DIY,
-                                                    art party locavore wolf cliche high life echo park Austin. Cred
-                                                    vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
-                                                    farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
-                                                    mustache.
-                                                </p>
-                                            </div>
-                                        </div>
+                                        </form>
         
                                     </div>
                                 </div>

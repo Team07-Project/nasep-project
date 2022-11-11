@@ -114,6 +114,7 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
+    
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/libs/metismenu/metisMenu.min.js"></script>
