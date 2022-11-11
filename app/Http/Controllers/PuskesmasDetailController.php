@@ -53,4 +53,11 @@ class PuskesmasDetailController extends Controller
         $detail->save();
         return redirect('/admin/detail');
     }
+
+    public function struktur()
+    {
+        $puskesmas = Detail::where('user_id', auth()->user()->id)->first();
+        $puskesmas->with('user');
+        return view('admin.detail.struktur',compact('puskesmas'));        
+    }
 }

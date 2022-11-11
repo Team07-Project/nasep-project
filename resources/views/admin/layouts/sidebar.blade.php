@@ -39,7 +39,7 @@
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                   <li><a href="/admin/detail">Tentang Puskesmas</a></li>
-                  <li><a href="struktur.html">Struktur Organisasi</a></li>
+                  <li><a href="/admin/detail/struktur">Struktur Organisasi</a></li>
                 </ul>
               </li>
 

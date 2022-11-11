@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('so_puskesmas')->nullable();
             $table->string('so_rawat')->nullable();
             $table->string('so_laboratorium')->nullable();
-            $table->string('text')->nullable();
             $table->timestamps();
         });
     }
